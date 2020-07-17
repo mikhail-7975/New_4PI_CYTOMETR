@@ -1,0 +1,15 @@
+#include "stm32f1xx.h"
+
+void main() {
+	RCC->APB2ENR |= RCC_APB2ENR_IOPBEN; //Включаем тактирование порта GPIOB
+
+	GPIOB->CRH &= 0x0;//(GPIO_CRH_MODE13 | GPIO_CRH_CNF13); //для начала все сбрасываем в ноль
+
+	GPIOB->CRH |= GPIO_CRH_MODE12_1 | GPIO_CRH_CNF12;
+
+	while(1) {
+		GPIOB->BSRR = GPIO_BSRR_BS12;
+		GPIOB->BSRR = GPIO_BSRR_BR12;
+		//GPIOB->ODR = ~(1<<12);
+	}
+}

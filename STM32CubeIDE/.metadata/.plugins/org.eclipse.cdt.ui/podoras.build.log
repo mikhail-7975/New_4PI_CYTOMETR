@@ -1,0 +1,10 @@
+12:08:28 **** Incremental Build of configuration Debug for project podoras ****
+make -j8 all 
+arm-none-eabi-size   podoras.elf 
+   text	   data	    bss	    dec	    hex	filename
+    816	     12	   1572	   2400	    960	podoras.elf
+Finished building: default.size.stdout
+ 
+
+12:08:28 Build Finished. 0 errors, 0 warnings. (took 416ms)
+

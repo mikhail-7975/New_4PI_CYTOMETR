@@ -1,0 +1,4 @@
+main.c:3:6:PortInit	4	static
+main.c:14:6:PortSetHi	4	static
+main.c:20:6:PortSetLow	4	static
+main.c:26:6:main	8	static
