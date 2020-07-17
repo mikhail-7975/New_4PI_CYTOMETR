@@ -1,5 +1,5 @@
 from mainWindow import *
-from settingsWindow import *
+from settingsWindowController import *
 
 class mainWindowController(QtWidgets.QDialog, Ui_MainWindow):
     def __init__(self, parent = None):
@@ -11,3 +11,4 @@ class mainWindowController(QtWidgets.QDialog, Ui_MainWindow):
     def settingsButtonCliked(self):
         settingsWindow = settingsWindowController()
         settingsWindow.exec_()
+

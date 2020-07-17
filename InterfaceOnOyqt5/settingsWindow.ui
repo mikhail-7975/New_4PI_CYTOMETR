@@ -81,6 +81,13 @@
       </property>
      </widget>
     </item>
+    <item row="2" column="3">
+     <widget class="QPushButton" name="connectPushButton">
+      <property name="text">
+       <string>Connect</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>

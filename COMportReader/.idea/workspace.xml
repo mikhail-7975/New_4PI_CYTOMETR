@@ -14,7 +14,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1eO1vk3MZE3ciM2HktQ01HMBbVn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,10 +26,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.readComPort">
     <configuration name="readComPort" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="COMportReader" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -33,7 +37,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="F:\CytomertGetDataSystem\COMportReader\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Python\Python37-32\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -54,7 +58,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="F:\CytomertGetDataSystem\COMportReader\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Python\Python37-32\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -87,30 +91,30 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="333" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594620593112">
+    <state x="333" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594970187712">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="333" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594620593112" />
-    <state x="658" y="186" key="FileChooserDialogImpl" timestamp="1594620591789">
+    <state x="333" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594970187712" />
+    <state x="658" y="186" key="FileChooserDialogImpl" timestamp="1594970140191">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="658" y="186" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594620591789" />
-    <state width="1515" height="317" key="GridCell.Tab.0.bottom" timestamp="1594960668371">
+    <state x="658" y="186" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594970140191" />
+    <state width="1515" height="317" key="GridCell.Tab.0.bottom" timestamp="1594970482393">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="317" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594960668371" />
-    <state width="1515" height="317" key="GridCell.Tab.0.center" timestamp="1594960668371">
+    <state width="1515" height="317" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594970482393" />
+    <state width="1515" height="317" key="GridCell.Tab.0.center" timestamp="1594970482393">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="317" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594960668371" />
-    <state width="1515" height="317" key="GridCell.Tab.0.left" timestamp="1594960668371">
+    <state width="1515" height="317" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594970482393" />
+    <state width="1515" height="317" key="GridCell.Tab.0.left" timestamp="1594970482393">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="317" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594960668371" />
-    <state width="1515" height="317" key="GridCell.Tab.0.right" timestamp="1594960668371">
+    <state width="1515" height="317" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594970482393" />
+    <state width="1515" height="317" key="GridCell.Tab.0.right" timestamp="1594970482393">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="317" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594960668371" />
+    <state width="1515" height="317" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594970482393" />
     <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1594890998087">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -127,10 +131,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594890998085" />
-    <state x="279" y="58" key="SettingsEditor" timestamp="1594620083705">
+    <state x="279" y="58" key="SettingsEditor" timestamp="1594970128522">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="279" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594620083705" />
+    <state x="279" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594970128522" />
     <state x="510" y="61" key="refactoring.ChangeSignatureDialog" timestamp="1594868947682">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
