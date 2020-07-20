@@ -1,31 +1,23 @@
-13:01:40 **** Incremental Build of configuration Debug for project tactGenerator ****
+14:34:35 **** Incremental Build of configuration Debug for project tactGenerator ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../USB_DEVICE/Target -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../USB_DEVICE/App -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:103:35: warning: passing argument 2 of 'CDC_Receive_FS' makes pointer from integer without a cast [-Wint-conversion]
-    CDC_Receive_FS(RawComPortData, 2);
-                                   ^
-In file included from ../Core/Src/main.c:27:0:
-../USB_DEVICE/App/usbd_cdc_if.h:109:8: note: expected 'uint32_t * {aka long unsigned int *}' but argument is of type 'int'
- int8_t CDC_Receive_FS(uint8_t* pbuf, uint32_t *Len);
-        ^~~~~~~~~~~~~~
-../Core/Src/main.c:95:12: warning: unused variable 'timeDelay' [-Wunused-variable]
+../Core/Src/main.c:106:12: error: 'UserRxBufferFS' undeclared (first use in this function); did you mean 'UserRx_Buffer'?
+    memcpy(&UserRxBufferFS, UserRx_Buffer, 64);
+            ^~~~~~~~~~~~~~
+            UserRx_Buffer
+../Core/Src/main.c:106:12: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:97:11: warning: unused variable 'usbStatus' [-Wunused-variable]
+   uint8_t usbStatus = 1;
+           ^~~~~~~~~
+../Core/Src/main.c:96:12: warning: unused variable 'timeDelay' [-Wunused-variable]
    uint16_t timeDelay = 1000;
             ^~~~~~~~~
-arm-none-eabi-gcc -o "tactGenerator.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\CytomertGetDataSystem\STM32CubeIDE\tactGenerator\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tactGenerator.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: tactGenerator.elf
- 
-arm-none-eabi-objdump -h -S  tactGenerator.elf  > "tactGenerator.list"
-arm-none-eabi-objcopy  -O binary  tactGenerator.elf  "tactGenerator.bin"
-arm-none-eabi-size   tactGenerator.elf 
-   text	   data	    bss	    dec	    hex	filename
-  21984	    388	   3828	  26200	   6658	tactGenerator.elf
-Finished building: default.size.stdout
- 
-Finished building: tactGenerator.bin
- 
-Finished building: tactGenerator.list
- 
+../Core/Src/main.c:95:11: warning: unused variable 'RawComPortData' [-Wunused-variable]
+   uint8_t RawComPortData[2];
+           ^~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:33: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
 
-13:01:41 Build Finished. 0 errors, 2 warnings. (took 1s.235ms)
+14:34:35 Build Failed. 2 errors, 3 warnings. (took 577ms)
 
