@@ -153,10 +153,11 @@ int main(void)
 			  dataFromAdc[i] = (uint16_t) HAL_ADC_GetValue(&hadc1);
 			  HAL_ADC_Stop(&hadc1);
 		  }
-		  uint8_t strToSend[5] = {0, 0, 0, 0, 0};
+
 		  for(int i = 0; i < POINT_COUNT; i++) {
+			  uint8_t strToSend[5] = {0, 0, 0, 0, 0};
 			  sprintf(strToSend, "%d ", dataFromAdc[i]);
-			  CDC_Transmit_FS(strToSend, strlen(strToSend));
+			  CDC_Transmit_FS(strToSend, 5);
 		  }
 	  }
 

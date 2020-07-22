@@ -35,7 +35,6 @@
 #define False 0
 #define modeReadData 2
 #define modeDontReadData 3
-#define POINT_COUNT 1000
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -71,12 +70,11 @@ uint8_t haveDataToParse = False;
 uint16_t frontBufferIndex = 0;
 uint16_t backBufferIndex = 0;
 
-uint16_t dataFromAdc[POINT_COUNT];
 uint16_t gainCoef = 0;
 uint16_t trigLevel = 0;
 uint8_t mode = modeDontReadData;
 
-uint16_t pow(uint16_t num, uint8_t pow) {
+inline uint16_t pow(uint16_t num, uint8_t pow) {
 	uint16_t res = 1;
 	for (uint8_t i = 0; i < pow; i++) {
 		res *= num;
@@ -84,7 +82,7 @@ uint16_t pow(uint16_t num, uint8_t pow) {
 	return res;
 }
 
-uint16_t strToInt(uint8_t* inpStr) {
+inline uint16_t strToInt(uint8_t* inpStr) {
 	return (inpStr[0] - '0') * pow(10, 3) + (inpStr[1] - '0') * pow(10, 2) + (inpStr[2] - '0') * pow(10, 1) + (inpStr[3] - '0') * pow(10, 0);
 }
 
@@ -99,10 +97,11 @@ void parseInpMessage() {
 		mode = modeDontReadData;
 	} else if (inpRawCmd[0] == 'g' && inpRawCmd[5] == 't') {
 		mode = modeDontReadData;
-		gainCoef = strToInt(&inpRawCmd[1]);
+		gainCoef = *strToInt(&inpRawCmd[1]);
 		trigLevel = strToInt(&inpRawCmd[6]);
 	}
 	haveDataToParse = False;
+
 }
 /* USER CODE END 0 */
 
@@ -146,20 +145,6 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	  parseInpMessage();
-	  if(mode == modeReadData) {
-		  for(int i = 0; i < POINT_COUNT; i++) {
-			  HAL_ADC_Start(&hadc1);
-			  HAL_ADC_PollForConversion(&hadc1,100);
-			  dataFromAdc[i] = (uint16_t) HAL_ADC_GetValue(&hadc1);
-			  HAL_ADC_Stop(&hadc1);
-		  }
-		  uint8_t strToSend[5] = {0, 0, 0, 0, 0};
-		  for(int i = 0; i < POINT_COUNT; i++) {
-			  sprintf(strToSend, "%d ", dataFromAdc[i]);
-			  CDC_Transmit_FS(strToSend, strlen(strToSend));
-		  }
-	  }
-
 	  CDC_Transmit_FS(inpRawCmd, 11);
 	  uint8_t str[7] = {' ', 'w', 'h', 'i', 'l', 'e', ' '};
 	  //CDC_Transmit_FS(&str, 7);
