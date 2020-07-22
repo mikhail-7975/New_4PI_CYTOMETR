@@ -25,4 +25,9 @@
 		<item key="width" value="649"/>
 		<item key="height" value="881"/>
 	</section>
+	<section name="RenameInformationPopup">
+		<item key="snap_position" value="2"/>
+	</section>
+	<section name="CRenameRefactoringInputPage">
+	</section>
 </section>

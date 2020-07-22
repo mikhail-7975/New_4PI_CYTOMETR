@@ -69,23 +69,30 @@ uint16_t frontBufferIndex = 0;
 uint16_t backBufferIndex = 0;
 
 uint16_t gainCoef = 0;
+uint16_t trigLevel = 0;
 
-inline uint32_t pow(uint16_t num, uint16_t pow) {
-	uint32_t res = 1;
-	for(int i = 0; i < pow; i++) {
+inline uint16_t pow(uint16_t num, uint8_t pow) {
+	uint16_t res = 1;
+	for (uint8_t i = 0; i < pow; i++) {
 		res *= num;
 	}
+	return res;
 }
 
-inline int stoi(uint8_t* inpStr) {
-	return pow((inpStr[1] - '0'), 4) + pow((inpStr[2] - '0'), 3) + pow((inpStr[3] - '0'), 2) + pow((inpStr[4] - '0'), 1);
+inline uint16_t strToInt(uint8_t* inpStr) {
+	return (inpStr[0] - '0') * pow(10, 3) + (inpStr[1] - '0') * pow(10, 2) + (inpStr[2] - '0') * pow(10, 1) + (inpStr[3] - '0') * pow(10, 0);
 }
 
-void dataParser() {
+void parseInpMessage() {
 	if(haveDataToParse == False)
 		return;
+	CDC_Transmit_FS("\nParser\n", sizeof("\nParser\n") );
 	memcpy(inpRawCmd, externalReciveBuffer, APP_RX_DATA_SIZE);
-	if()
+	if(inpRawCmd[0] == 'g' && inpRawCmd[5] == 't') {
+		//gainCoef = strToInt(&inpRawCmd[1]);
+		//trigLevel = strToInt(&inpRawCmd[6]);
+	}
+	haveDataToParse = False;
 
 }
 /* USER CODE END 0 */
@@ -129,6 +136,11 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+	  parseInpMessage();
+	  CDC_Transmit_FS(inpRawCmd, 11);
+	  uint8_t str[7] = {' ', 'w', 'h', 'i', 'l', 'e', ' '};
+	  //CDC_Transmit_FS(&str, 7);
+	  HAL_Delay(2000);
 
     /* USER CODE BEGIN 3 */
   }
@@ -249,6 +261,7 @@ static void MX_GPIO_Init(void)
 
 void CDC_ReciveCallBack(uint8_t *reciveBuf, uint32_t len)
 {
+	CDC_Transmit_FS("\nCallBack\n", sizeof("\nCallBack\n"));
 	memcpy(externalReciveBuffer, reciveBuf, len);
 	haveDataToParse = True;
 }
