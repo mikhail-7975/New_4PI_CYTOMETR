@@ -16,7 +16,7 @@ class ComPortReaderThread(Thread):
         """Запуск потока"""
         global inpFromPort
         while(1):
-            inp0, inp1 = self.serialPort.read(), self.serialPort.read()
+            inp0, inp1, inp3, inp4 = self.serialPort.read(), self.serialPort.read()
             #data1 = ord(inp0)  # .decode('utf-8')) << 8)
             #data2 = ord(inp1)  # .decode('utf-8')
             #print(bin((data1 << 8 | data2))[2:].zfill(16))

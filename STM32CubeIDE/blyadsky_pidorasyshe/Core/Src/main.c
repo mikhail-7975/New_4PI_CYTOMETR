@@ -44,6 +44,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+#define POINT_COUNT 5000
 
 /* USER CODE END PV */
 
@@ -56,7 +57,7 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+uint8_t isDataSendingFlag = 0;
 /* USER CODE END 0 */
 
 /**
@@ -89,13 +90,26 @@ int main(void)
   MX_GPIO_Init();
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
-
+  //uint16_t data[1000];
+  uint8_t* data = malloc(POINT_COUNT * sizeof(uint16_t));
+  for (uint16_t i = 0; i < POINT_COUNT; i++) {
+	  uint16_t d = i % 4095;
+	  memcpy((data + i * sizeof(uint16_t)), &d, sizeof(uint16_t));
+  }
   /* USER CODE END 2 */
-
+  uint8_t flag = 1;
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  //sprintf(strToSend, "\n\r");
+	  /*while( != USBD_OK) {
+
+	  }*/
+	  CDC_Transmit_FS(data, POINT_COUNT * sizeof(uint16_t));
+	  isDataSendingFlag = 1;
+	  while(isDataSendingFlag) {}
+	  //HAL_Delay(3000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -163,9 +177,11 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+char str[4] = "all";
 void CDC_ReciveCallBack(uint8_t *buf, uint32_t len)
 {
-	CDC_Transmit_FS(buf, len);
+
+	isDataSendingFlag = memcmp(buf, &str, 3);
 }
 /* USER CODE END 4 */
 
