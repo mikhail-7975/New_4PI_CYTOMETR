@@ -112,7 +112,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   //uint16_t data[1000];
   uint8_t* data = malloc(POINT_COUNT * sizeof(uint16_t));
- 8000162:	f243 60b0 	movw	r0, #14000	; 0x36b0
+ 8000162:	f242 7010 	movw	r0, #10000	; 0x2710
  8000166:	f005 f82d 	bl	80051c4 <malloc>
  800016a:	4603      	mov	r3, r0
  800016c:	60bb      	str	r3, [r7, #8]
@@ -146,7 +146,7 @@ int main(void)
  800019e:	3301      	adds	r3, #1
  80001a0:	81fb      	strh	r3, [r7, #14]
  80001a2:	89fb      	ldrh	r3, [r7, #14]
- 80001a4:	f641 3257 	movw	r2, #6999	; 0x1b57
+ 80001a4:	f241 3287 	movw	r2, #4999	; 0x1387
  80001a8:	4293      	cmp	r3, r2
  80001aa:	d9e3      	bls.n	8000174 <main+0x28>
   }
@@ -160,7 +160,7 @@ int main(void)
 
 	  }*/
 	  CDC_Transmit_FS(data, POINT_COUNT * sizeof(uint16_t));
- 80001b0:	f243 61b0 	movw	r1, #14000	; 0x36b0
+ 80001b0:	f242 7110 	movw	r1, #10000	; 0x2710
  80001b4:	68b8      	ldr	r0, [r7, #8]
  80001b6:	f004 fc09 	bl	80049cc <CDC_Transmit_FS>
 	  isDataSendingFlag = 1;

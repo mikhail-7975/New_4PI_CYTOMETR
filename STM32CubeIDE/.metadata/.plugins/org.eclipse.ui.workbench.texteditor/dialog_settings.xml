@@ -6,8 +6,12 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="SetTx"/>
+		<item key="selection" value="data"/>
 		<list key="findhistory">
+			<item value="data"/>
+			<item value="modeDontReadData"/>
+			<item value="modeReadData"/>
+			<item value="USBD_LL_Transmit"/>
 			<item value="settx"/>
 			<item value="set"/>
 			<item value="VCP"/>
@@ -16,6 +20,8 @@
 			<item value="Timeout"/>
 		</list>
 		<list key="replacehistory">
+			<item value="MODE_DontReadData"/>
+			<item value="MODE_ReadData"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

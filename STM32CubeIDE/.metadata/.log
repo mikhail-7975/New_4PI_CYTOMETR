@@ -2595,3 +2595,9 @@ java.lang.RuntimeException
 	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-07-27 11:19:38.503
+!MESSAGE Indexed 'measureSPIdelay' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-07-27 11:19:50.322
+!MESSAGE Indexed 'measureSPIdelay' (18 sources, 32 headers) in 2.32 sec: 1,732 declarations; 10,764 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)

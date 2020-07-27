@@ -33,8 +33,8 @@
 #define NOT_EMPTY_BUFFER 1
 #define True 1
 #define False 0
-#define modeReadData 2
-#define modeDontReadData 3
+#define MODE_ReadData 2
+#define MODE_DontReadData 3
 #define POINT_COUNT 1000
 /* USER CODE END PTD */
 
@@ -71,10 +71,12 @@ uint8_t haveDataToParse = False;
 uint16_t frontBufferIndex = 0;
 uint16_t backBufferIndex = 0;
 
-uint16_t dataFromAdc[POINT_COUNT];
+//uint16_t dataFromAdc[POINT_COUNT];
+uint8_t* dataFromAdc;
+uint8_t isDataSendingFlag = False;
 uint16_t gainCoef = 0;
 uint16_t trigLevel = 0;
-uint8_t mode = modeDontReadData;
+uint8_t mode = MODE_DontReadData;
 
 uint16_t pow(uint16_t num, uint8_t pow) {
 	uint16_t res = 1;
@@ -91,19 +93,18 @@ uint16_t strToInt(uint8_t* inpStr) {
 void parseInpMessage() {
 	if(haveDataToParse == False)
 		return;
-	CDC_Transmit_FS("\nParser\n", sizeof("\nParser\n") );
 	memcpy(inpRawCmd, externalReciveBuffer, APP_RX_DATA_SIZE);
 	if(inpRawCmd[0] == 'r') {//read data
-		mode = modeReadData;
+		mode = MODE_ReadData;
 	} else if(inpRawCmd[0] == 's') {//stop read data
-		mode = modeDontReadData;
+		mode = MODE_DontReadData;
 	} else if (inpRawCmd[0] == 'g' && inpRawCmd[5] == 't') {
-		mode = modeDontReadData;
+		mode = MODE_DontReadData;
 		gainCoef = strToInt(&inpRawCmd[1]);
 		trigLevel = strToInt(&inpRawCmd[6]);
 	}
 	haveDataToParse = False;
-}
+}//g0012t1234
 /* USER CODE END 0 */
 
 /**
@@ -113,7 +114,7 @@ void parseInpMessage() {
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+	dataFromAdc = (uint8_t*)malloc(POINT_COUNT * sizeof(uint16_t));
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -146,24 +147,20 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	  parseInpMessage();
-	  if(mode == modeReadData) {
+	  if(mode == MODE_ReadData) {
 		  for(int i = 0; i < POINT_COUNT; i++) {
 			  HAL_ADC_Start(&hadc1);
 			  HAL_ADC_PollForConversion(&hadc1,100);
-			  dataFromAdc[i] = (uint16_t) HAL_ADC_GetValue(&hadc1);
+			  uint16_t inpAdc = (uint16_t) HAL_ADC_GetValue(&hadc1);
+			  memcpy((dataFromAdc + i * sizeof(uint16_t)), &inpAdc, sizeof(uint16_t));
 			  HAL_ADC_Stop(&hadc1);
 		  }
-		  uint8_t strToSend[5] = {0, 0, 0, 0, 0};
-		  for(int i = 0; i < POINT_COUNT; i++) {
-			  sprintf(strToSend, "%d ", dataFromAdc[i]);
-			  CDC_Transmit_FS(strToSend, strlen(strToSend));
-		  }
+		  CDC_Transmit_FS(dataFromAdc, POINT_COUNT * sizeof(uint16_t));
+		  isDataSendingFlag = True;
+		  while(isDataSendingFlag == True) {}
 	  }
 
-	  CDC_Transmit_FS(inpRawCmd, 11);
-	  uint8_t str[7] = {' ', 'w', 'h', 'i', 'l', 'e', ' '};
-	  //CDC_Transmit_FS(&str, 7);
-	  HAL_Delay(2000);
+
 
     /* USER CODE BEGIN 3 */
   }
@@ -281,10 +278,10 @@ static void MX_GPIO_Init(void)
 	memcpy(userBuf, reciveBuf, len);
 	haveDataToParse = True;
 }*/
-
+char str[4] = "all";
 void CDC_ReciveCallBack(uint8_t *reciveBuf, uint32_t len)
 {
-	CDC_Transmit_FS("\nCallBack\n", sizeof("\nCallBack\n"));
+	isDataSendingFlag = memcmp(reciveBuf, &str, 3);
 	memcpy(externalReciveBuffer, reciveBuf, len);
 	haveDataToParse = True;
 }

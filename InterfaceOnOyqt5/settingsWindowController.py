@@ -34,23 +34,22 @@ class settingsWindowController(QtWidgets.QDialog, Ui_SettingsWindow):
         except Exception as e:
             print(e)
 
-    def readMessageFromPort(self):
-        message = ""
-        inp = b''
-        while cytometr.serialPort.inWaiting():
-            inp = cytometr.serialPort.  read()
-            message += inp.decode('utf-8')
-        return message
+    def readDataFromPort(self):
+        data = []
+        while (data.inWaiting()):
+            str.append(ord(data.read()) | (ord(data.read()) << 8))
+        return data
 
     @QtCore.pyqtSlot()
     def setButtonCliked(self):
         print("set button")
+
+        message = "g" + self.gainLineEdit.text().zfill(4) + "t" + self.triggerLowLineEdit.text().zfill(4)
+        print(message)
+        print(message.encode('utf-8'))
         if cytometr.serialPortStatus == portStatuses.connect:
-            print(self.readMessageFromPort())
-            cytometr.serialPort.write(b'Gain')
-            inp = self.readMessageFromPort()
-            if inp == "Enter value (0-4095)\r\n":
-                print(self.gainLineEdit.text().encode())
-                cytometr.serialPort.write(b'1')
+            cytometr.gain = int(self.gainLineEdit.text())
+            cytometr.triggerLevel = int(self.triggerLowLineEdit.text())
+            cytometr.serialPort.write(message.encode('utf-8'))
         else:
             print("cytometr disconnected")
