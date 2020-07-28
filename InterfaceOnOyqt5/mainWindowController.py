@@ -16,17 +16,17 @@ class mainWindowController(QtWidgets.QDialog, Ui_MainWindow):
 
     @QtCore.pyqtSlot()
     def startReadingCliked(self):
-        if cytometr.serialPortStatus == portStatuses.connect:
-            cytometr.status = cytoStatuses.readData
-            cytometr.serialPort.write(b'r')
+        if cytometr_kernel.serialPortStatus == portStatuses.connect:
+            cytometr_kernel.status = cytoStatuses.readData
+            cytometr_kernel.serialPort.write(b'r')
         else:
             print("cytometr disconnected")
 
     @QtCore.pyqtSlot()
     def stopReadingCliked(self):
-        if cytometr.serialPortStatus == portStatuses.connect:
-            cytometr.status = cytoStatuses.notReadData
-            cytometr.serialPort.write(b's')
+        if cytometr_kernel.serialPortStatus == portStatuses.connect:
+            cytometr_kernel.status = cytoStatuses.notReadData
+            cytometr_kernel.serialPort.write(b's')
         else:
             print("cytometr disconnected")
 

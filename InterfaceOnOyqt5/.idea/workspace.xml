@@ -25,7 +25,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../COMportReader" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.main">
@@ -120,30 +120,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1594968833569" />
-    <state x="548" y="170" key="FileChooserDialogImpl" timestamp="1595833467994">
+    <state x="548" y="170" key="FileChooserDialogImpl" timestamp="1595908208192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="170" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1595474474959" />
+    <state x="548" y="170" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1595908208192" />
     <state x="548" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595833467994" />
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1595839677219">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1595909994065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1595234450792" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1595909994065" />
     <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595839677219" />
-    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1595839677219">
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1595909994065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1595234450792" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1595909994065" />
     <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595839677219" />
-    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1595839677219">
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1595909994065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1595234450792" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1595909994065" />
     <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595839677219" />
-    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1595839677219">
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1595909994065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1595234450792" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1595909994065" />
     <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595839677219" />
     <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1595056842228">
       <screen x="0" y="0" width="1536" height="824" />

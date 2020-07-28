@@ -16,29 +16,17 @@ class settingsWindowController(QtWidgets.QDialog, Ui_SettingsWindow):
     def connectButtonCliked(self):
         print("connect button")
         try:
-            if cytometr.serialPortStatus == portStatuses.disconnect:
+            if cytometr_kernel.serialPortStatus == portStatuses.disconnect:
                 portName = self.portNameLineEdit.text()
-                if portName == "":
-                    ports = serial.tools.list_ports.comports(include_links=False)
-                    cytometr.serialPort = serial.Serial(ports[0].device)
-                    self.portNameLineEdit.setText(ports[0].device)
-                else:
-                    cytometr.serialPort = serial.Serial(portName)
-                cytometr.serialPortStatus = portStatuses.connect
+                cytometr_kernel.connectToPort(portName)
                 self.connectPushButton.setText("Disconnect")
-                cytometr.serialPort.write(b'w')
+                cytometr_kernel.serialPort.write(b'w')
             else:
-                cytometr.serialPort.close()
-                cytometr.serialPortStatus = portStatuses.disconnect
+                cytometr_kernel.serialPort.close()
+                cytometr_kernel.serialPortStatus = portStatuses.disconnect
                 self.connectPushButton.setText("Connect")
         except Exception as e:
             print(e)
-
-    def readDataFromPort(self):
-        data = []
-        while (data.inWaiting()):
-            str.append(ord(data.read()) | (ord(data.read()) << 8))
-        return data
 
     @QtCore.pyqtSlot()
     def setButtonCliked(self):
@@ -47,9 +35,9 @@ class settingsWindowController(QtWidgets.QDialog, Ui_SettingsWindow):
         message = "g" + self.gainLineEdit.text().zfill(4) + "t" + self.triggerLowLineEdit.text().zfill(4)
         print(message)
         print(message.encode('utf-8'))
-        if cytometr.serialPortStatus == portStatuses.connect:
-            cytometr.gain = int(self.gainLineEdit.text())
-            cytometr.triggerLevel = int(self.triggerLowLineEdit.text())
-            cytometr.serialPort.write(message.encode('utf-8'))
+        if cytometr_kernel.serialPortStatus == portStatuses.connect:
+            cytometr_kernel.gain = int(self.gainLineEdit.text())
+            cytometr_kernel.triggerLevel = int(self.triggerLowLineEdit.text())
+            cytometr_kernel.serialPort.write(message.encode('utf-8'))
         else:
             print("cytometr disconnected")
