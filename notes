@@ -1,0 +1,17 @@
+Заготовка работы с буффером триггера
+//...
+const int SIZE = 20;
+	int startIdx = 17;
+	int preBufLen = 4;
+	int a[SIZE];
+	for (int i = 0; i < SIZE; i++)
+		a[i] = i + 1;
+	int i = startIdx;
+do {
+		if (i == startIdx - preBufLen) {
+			std::cout << "|||";
+		}
+		std::cout << a[i] << " ";
+		i = (i + 1) % SIZE;
+	} while (i != startIdx);
+//...
