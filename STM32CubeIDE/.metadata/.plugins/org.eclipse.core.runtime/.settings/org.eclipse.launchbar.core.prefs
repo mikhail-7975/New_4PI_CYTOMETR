@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:interupt_f103c8t6 Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:interupt_f103c8t6 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:analog_watch_dog Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:interupt_f103c8t6\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:interupt_f103c8t6\ Debug/activeLaunchTarget=null\:---

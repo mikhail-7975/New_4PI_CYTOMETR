@@ -1,7 +1,17 @@
-16:02:24 **** Incremental Build of configuration Debug for project interupt_f103c8t6 ****
+09:18:53 **** Incremental Build of configuration Debug for project analog_watch_dog ****
 make -j8 all 
-arm-none-eabi-size   interupt_f103c8t6.elf 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "analog_watch_dog.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\CytomertGetDataSystem\New_4PI_CYTOMETR\STM32CubeIDE\analog_watch_dog\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="analog_watch_dog.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: analog_watch_dog.elf
+ 
+arm-none-eabi-objdump -h -S  analog_watch_dog.elf  > "analog_watch_dog.list"
+arm-none-eabi-objcopy  -O binary  analog_watch_dog.elf  "analog_watch_dog.bin"
+arm-none-eabi-size   analog_watch_dog.elf 
    text	   data	    bss	    dec	    hex	filename
-   8108	     20	   1620	   9748	   2614	interupt_f103c8t6.elf
+   8396	     20	   1620	  10036	   2734	analog_watch_dog.elf
 Finished building: default.size.stdout
+ 
+Finished building: analog_watch_dog.bin
+Finished building: analog_watch_dog.list
+ 
  
