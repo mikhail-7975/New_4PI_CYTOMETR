@@ -1,0 +1,10 @@
+16:02:24 **** Incremental Build of configuration Debug for project interupt_f103c8t6 ****
+make -j8 all 
+arm-none-eabi-size   interupt_f103c8t6.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8108	     20	   1620	   9748	   2614	interupt_f103c8t6.elf
+Finished building: default.size.stdout
+ 
+
+16:02:25 Build Finished. 0 errors, 0 warnings. (took 380ms)
+

@@ -1,20 +1,7 @@
-13:28:28 **** Incremental Build of configuration Debug for project triggerFirmware ****
+16:02:24 **** Incremental Build of configuration Debug for project interupt_f103c8t6 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../USB_DEVICE/Target -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../USB_DEVICE/App -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:81:10: warning: conflicting types for built-in function 'pow' [-Wbuiltin-declaration-mismatch]
- uint16_t pow(uint16_t num, uint8_t pow) {
-          ^~~
-arm-none-eabi-gcc -o "triggerFirmware.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\CytomertGetDataSystem\New_4PI_CYTOMETR\STM32CubeIDE\triggerFirmware\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="triggerFirmware.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: triggerFirmware.elf
- 
-arm-none-eabi-objdump -h -S  triggerFirmware.elf  > "triggerFirmware.list"
-arm-none-eabi-objcopy  -O binary  triggerFirmware.elf  "triggerFirmware.bin"
-arm-none-eabi-size   triggerFirmware.elf 
+arm-none-eabi-size   interupt_f103c8t6.elf 
    text	   data	    bss	    dec	    hex	filename
-  25344	    496	   7776	  33616	   8350	triggerFirmware.elf
+   8108	     20	   1620	   9748	   2614	interupt_f103c8t6.elf
 Finished building: default.size.stdout
- 
-Finished building: triggerFirmware.bin
- 
-Finished building: triggerFirmware.list
  

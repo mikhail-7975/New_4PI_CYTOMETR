@@ -26,7 +26,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../InterfaceOnOyqt5" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.readComPort">
@@ -95,11 +95,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="333" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594970187712" />
-    <state x="658" y="186" key="FileChooserDialogImpl" timestamp="1595399778171">
+    <state x="658" y="186" key="FileChooserDialogImpl" timestamp="1595994174374">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="658" y="186" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1595399778171" />
-    <state x="658" y="186" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594970140191" />
+    <state x="658" y="186" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595994174374" />
     <state width="1515" height="317" key="GridCell.Tab.0.bottom" timestamp="1595399782923">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

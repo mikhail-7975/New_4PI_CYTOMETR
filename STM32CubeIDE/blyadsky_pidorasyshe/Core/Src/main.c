@@ -93,7 +93,7 @@ int main(void)
   //uint16_t data[1000];
   uint8_t* data = malloc(POINT_COUNT * sizeof(uint16_t));
   for (uint16_t i = 0; i < POINT_COUNT; i++) {
-	  uint16_t d = i % 4095;
+	  uint16_t d = 1;//i % 4095;
 	  memcpy((data + i * sizeof(uint16_t)), &d, sizeof(uint16_t));
   }
   /* USER CODE END 2 */

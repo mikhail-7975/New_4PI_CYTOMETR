@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;usb_f103c8t6_cmsis&apos;" deleteContents="true" description="Delete resource &apos;usb_f103c8t6_cmsis&apos;" element1="/usb_f103c8t6_cmsis" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1597897922112"/>
+</session>
