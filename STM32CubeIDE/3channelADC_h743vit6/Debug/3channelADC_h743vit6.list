@@ -115,142 +115,141 @@ int main(void)
   uint8_t channelCount = 3;
  80002f2:	2303      	movs	r3, #3
  80002f4:	74fb      	strb	r3, [r7, #19]
-  uint16_t traceLenth = 10;
- 80002f6:	230a      	movs	r3, #10
- 80002f8:	823b      	strh	r3, [r7, #16]
+  uint16_t traceLenth = 1000;
+ 80002f6:	f44f 737a 	mov.w	r3, #1000	; 0x3e8
+ 80002fa:	823b      	strh	r3, [r7, #16]
   const arraySize = channelCount * traceLenth;
- 80002fa:	7cfb      	ldrb	r3, [r7, #19]
- 80002fc:	8a3a      	ldrh	r2, [r7, #16]
- 80002fe:	fb02 f303 	mul.w	r3, r2, r3
- 8000302:	60fb      	str	r3, [r7, #12]
+ 80002fc:	7cfb      	ldrb	r3, [r7, #19]
+ 80002fe:	8a3a      	ldrh	r2, [r7, #16]
+ 8000300:	fb02 f303 	mul.w	r3, r2, r3
+ 8000304:	60fb      	str	r3, [r7, #12]
   uint8_t dataFromAdc7 = 0;
- 8000304:	2300      	movs	r3, #0
- 8000306:	72fb      	strb	r3, [r7, #11]
+ 8000306:	2300      	movs	r3, #0
+ 8000308:	72fb      	strb	r3, [r7, #11]
   uint8_t dataFromAdc8 = 0;
- 8000308:	2300      	movs	r3, #0
- 800030a:	72bb      	strb	r3, [r7, #10]
+ 800030a:	2300      	movs	r3, #0
+ 800030c:	72bb      	strb	r3, [r7, #10]
   uint8_t dataFromAdc9 = 0;
- 800030c:	2300      	movs	r3, #0
- 800030e:	727b      	strb	r3, [r7, #9]
+ 800030e:	2300      	movs	r3, #0
+ 8000310:	727b      	strb	r3, [r7, #9]
 
   uint8_t dataArray[arraySize];
- 8000310:	68fb      	ldr	r3, [r7, #12]
- 8000312:	3b01      	subs	r3, #1
- 8000314:	607b      	str	r3, [r7, #4]
- 8000316:	68fb      	ldr	r3, [r7, #12]
- 8000318:	4619      	mov	r1, r3
- 800031a:	f04f 0200 	mov.w	r2, #0
- 800031e:	f04f 0300 	mov.w	r3, #0
- 8000322:	f04f 0400 	mov.w	r4, #0
- 8000326:	00d4      	lsls	r4, r2, #3
- 8000328:	ea44 7451 	orr.w	r4, r4, r1, lsr #29
- 800032c:	00cb      	lsls	r3, r1, #3
- 800032e:	68fb      	ldr	r3, [r7, #12]
- 8000330:	4619      	mov	r1, r3
- 8000332:	f04f 0200 	mov.w	r2, #0
- 8000336:	f04f 0300 	mov.w	r3, #0
- 800033a:	f04f 0400 	mov.w	r4, #0
- 800033e:	00d4      	lsls	r4, r2, #3
- 8000340:	ea44 7451 	orr.w	r4, r4, r1, lsr #29
- 8000344:	00cb      	lsls	r3, r1, #3
- 8000346:	68fb      	ldr	r3, [r7, #12]
- 8000348:	3307      	adds	r3, #7
- 800034a:	08db      	lsrs	r3, r3, #3
- 800034c:	00db      	lsls	r3, r3, #3
- 800034e:	ebad 0d03 	sub.w	sp, sp, r3
- 8000352:	466b      	mov	r3, sp
- 8000354:	3300      	adds	r3, #0
- 8000356:	603b      	str	r3, [r7, #0]
+ 8000312:	68fb      	ldr	r3, [r7, #12]
+ 8000314:	3b01      	subs	r3, #1
+ 8000316:	607b      	str	r3, [r7, #4]
+ 8000318:	68fb      	ldr	r3, [r7, #12]
+ 800031a:	4619      	mov	r1, r3
+ 800031c:	f04f 0200 	mov.w	r2, #0
+ 8000320:	f04f 0300 	mov.w	r3, #0
+ 8000324:	f04f 0400 	mov.w	r4, #0
+ 8000328:	00d4      	lsls	r4, r2, #3
+ 800032a:	ea44 7451 	orr.w	r4, r4, r1, lsr #29
+ 800032e:	00cb      	lsls	r3, r1, #3
+ 8000330:	68fb      	ldr	r3, [r7, #12]
+ 8000332:	4619      	mov	r1, r3
+ 8000334:	f04f 0200 	mov.w	r2, #0
+ 8000338:	f04f 0300 	mov.w	r3, #0
+ 800033c:	f04f 0400 	mov.w	r4, #0
+ 8000340:	00d4      	lsls	r4, r2, #3
+ 8000342:	ea44 7451 	orr.w	r4, r4, r1, lsr #29
+ 8000346:	00cb      	lsls	r3, r1, #3
+ 8000348:	68fb      	ldr	r3, [r7, #12]
+ 800034a:	3307      	adds	r3, #7
+ 800034c:	08db      	lsrs	r3, r3, #3
+ 800034e:	00db      	lsls	r3, r3, #3
+ 8000350:	ebad 0d03 	sub.w	sp, sp, r3
+ 8000354:	466b      	mov	r3, sp
+ 8000356:	3300      	adds	r3, #0
+ 8000358:	603b      	str	r3, [r7, #0]
   for(uint16_t i = 0; i < arraySize; i++) {
- 8000358:	2300      	movs	r3, #0
- 800035a:	82bb      	strh	r3, [r7, #20]
- 800035c:	e006      	b.n	800036c <main+0x94>
+ 800035a:	2300      	movs	r3, #0
+ 800035c:	82bb      	strh	r3, [r7, #20]
+ 800035e:	e006      	b.n	800036e <main+0x96>
 	  dataArray[i] = 10;
- 800035e:	8abb      	ldrh	r3, [r7, #20]
- 8000360:	683a      	ldr	r2, [r7, #0]
- 8000362:	210a      	movs	r1, #10
- 8000364:	54d1      	strb	r1, [r2, r3]
+ 8000360:	8abb      	ldrh	r3, [r7, #20]
+ 8000362:	683a      	ldr	r2, [r7, #0]
+ 8000364:	210a      	movs	r1, #10
+ 8000366:	54d1      	strb	r1, [r2, r3]
   for(uint16_t i = 0; i < arraySize; i++) {
- 8000366:	8abb      	ldrh	r3, [r7, #20]
- 8000368:	3301      	adds	r3, #1
- 800036a:	82bb      	strh	r3, [r7, #20]
- 800036c:	8abb      	ldrh	r3, [r7, #20]
- 800036e:	68fa      	ldr	r2, [r7, #12]
- 8000370:	429a      	cmp	r2, r3
- 8000372:	dcf4      	bgt.n	800035e <main+0x86>
+ 8000368:	8abb      	ldrh	r3, [r7, #20]
+ 800036a:	3301      	adds	r3, #1
+ 800036c:	82bb      	strh	r3, [r7, #20]
+ 800036e:	8abb      	ldrh	r3, [r7, #20]
+ 8000370:	68fa      	ldr	r2, [r7, #12]
+ 8000372:	429a      	cmp	r2, r3
+ 8000374:	dcf4      	bgt.n	8000360 <main+0x88>
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
 	  while(CDC_Transmit_FS(&dataArray, arraySize) == USBD_BUSY);
- 8000374:	bf00      	nop
- 8000376:	683b      	ldr	r3, [r7, #0]
- 8000378:	68f9      	ldr	r1, [r7, #12]
- 800037a:	4618      	mov	r0, r3
- 800037c:	f009 faa2 	bl	80098c4 <CDC_Transmit_FS>
- 8000380:	4603      	mov	r3, r0
- 8000382:	2b01      	cmp	r3, #1
- 8000384:	d0f7      	beq.n	8000376 <main+0x9e>
+ 8000376:	bf00      	nop
+ 8000378:	683b      	ldr	r3, [r7, #0]
+ 800037a:	68f9      	ldr	r1, [r7, #12]
+ 800037c:	4618      	mov	r0, r3
+ 800037e:	f009 faa1 	bl	80098c4 <CDC_Transmit_FS>
+ 8000382:	4603      	mov	r3, r0
+ 8000384:	2b01      	cmp	r3, #1
+ 8000386:	d0f7      	beq.n	8000378 <main+0xa0>
 	  for(uint16_t i = 0; i < traceLenth; i++) {
- 8000386:	2300      	movs	r3, #0
- 8000388:	82fb      	strh	r3, [r7, #22]
- 800038a:	e029      	b.n	80003e0 <main+0x108>
+ 8000388:	2300      	movs	r3, #0
+ 800038a:	82fb      	strh	r3, [r7, #22]
+ 800038c:	e029      	b.n	80003e2 <main+0x10a>
 		  HAL_ADC_Start(&hadc1);
- 800038c:	4819      	ldr	r0, [pc, #100]	; (80003f4 <main+0x11c>)
- 800038e:	f001 f811 	bl	80013b4 <HAL_ADC_Start>
+ 800038e:	4819      	ldr	r0, [pc, #100]	; (80003f4 <main+0x11c>)
+ 8000390:	f001 f810 	bl	80013b4 <HAL_ADC_Start>
 		  HAL_ADC_PollForConversion(&hadc1,100);
- 8000392:	2164      	movs	r1, #100	; 0x64
- 8000394:	4817      	ldr	r0, [pc, #92]	; (80003f4 <main+0x11c>)
- 8000396:	f001 f90b 	bl	80015b0 <HAL_ADC_PollForConversion>
+ 8000394:	2164      	movs	r1, #100	; 0x64
+ 8000396:	4817      	ldr	r0, [pc, #92]	; (80003f4 <main+0x11c>)
+ 8000398:	f001 f90a 	bl	80015b0 <HAL_ADC_PollForConversion>
 		  dataArray[i] = (uint8_t) HAL_ADC_GetValue(&hadc1);//7 channel PA7
- 800039a:	4816      	ldr	r0, [pc, #88]	; (80003f4 <main+0x11c>)
- 800039c:	f001 f9f4 	bl	8001788 <HAL_ADC_GetValue>
- 80003a0:	4602      	mov	r2, r0
- 80003a2:	8afb      	ldrh	r3, [r7, #22]
- 80003a4:	b2d1      	uxtb	r1, r2
- 80003a6:	683a      	ldr	r2, [r7, #0]
- 80003a8:	54d1      	strb	r1, [r2, r3]
+ 800039c:	4815      	ldr	r0, [pc, #84]	; (80003f4 <main+0x11c>)
+ 800039e:	f001 f9f3 	bl	8001788 <HAL_ADC_GetValue>
+ 80003a2:	4602      	mov	r2, r0
+ 80003a4:	8afb      	ldrh	r3, [r7, #22]
+ 80003a6:	b2d1      	uxtb	r1, r2
+ 80003a8:	683a      	ldr	r2, [r7, #0]
+ 80003aa:	54d1      	strb	r1, [r2, r3]
 		  dataArray[i + traceLenth] = (uint8_t) HAL_ADC_GetValue(&hadc1);//8 channel PC5
- 80003aa:	4812      	ldr	r0, [pc, #72]	; (80003f4 <main+0x11c>)
- 80003ac:	f001 f9ec 	bl	8001788 <HAL_ADC_GetValue>
- 80003b0:	4601      	mov	r1, r0
- 80003b2:	8afa      	ldrh	r2, [r7, #22]
- 80003b4:	8a3b      	ldrh	r3, [r7, #16]
- 80003b6:	4413      	add	r3, r2
- 80003b8:	b2c9      	uxtb	r1, r1
- 80003ba:	683a      	ldr	r2, [r7, #0]
- 80003bc:	54d1      	strb	r1, [r2, r3]
+ 80003ac:	4811      	ldr	r0, [pc, #68]	; (80003f4 <main+0x11c>)
+ 80003ae:	f001 f9eb 	bl	8001788 <HAL_ADC_GetValue>
+ 80003b2:	4601      	mov	r1, r0
+ 80003b4:	8afa      	ldrh	r2, [r7, #22]
+ 80003b6:	8a3b      	ldrh	r3, [r7, #16]
+ 80003b8:	4413      	add	r3, r2
+ 80003ba:	b2c9      	uxtb	r1, r1
+ 80003bc:	683a      	ldr	r2, [r7, #0]
+ 80003be:	54d1      	strb	r1, [r2, r3]
 		  dataArray[i + 2 * traceLenth] = (uint8_t) HAL_ADC_GetValue(&hadc1);//9 channel PB0
- 80003be:	480d      	ldr	r0, [pc, #52]	; (80003f4 <main+0x11c>)
- 80003c0:	f001 f9e2 	bl	8001788 <HAL_ADC_GetValue>
- 80003c4:	4601      	mov	r1, r0
- 80003c6:	8afa      	ldrh	r2, [r7, #22]
- 80003c8:	8a3b      	ldrh	r3, [r7, #16]
- 80003ca:	005b      	lsls	r3, r3, #1
- 80003cc:	4413      	add	r3, r2
- 80003ce:	b2c9      	uxtb	r1, r1
- 80003d0:	683a      	ldr	r2, [r7, #0]
- 80003d2:	54d1      	strb	r1, [r2, r3]
+ 80003c0:	480c      	ldr	r0, [pc, #48]	; (80003f4 <main+0x11c>)
+ 80003c2:	f001 f9e1 	bl	8001788 <HAL_ADC_GetValue>
+ 80003c6:	4601      	mov	r1, r0
+ 80003c8:	8afa      	ldrh	r2, [r7, #22]
+ 80003ca:	8a3b      	ldrh	r3, [r7, #16]
+ 80003cc:	005b      	lsls	r3, r3, #1
+ 80003ce:	4413      	add	r3, r2
+ 80003d0:	b2c9      	uxtb	r1, r1
+ 80003d2:	683a      	ldr	r2, [r7, #0]
+ 80003d4:	54d1      	strb	r1, [r2, r3]
 		  HAL_ADC_Stop(&hadc1);
- 80003d4:	4807      	ldr	r0, [pc, #28]	; (80003f4 <main+0x11c>)
- 80003d6:	f001 f8b7 	bl	8001548 <HAL_ADC_Stop>
+ 80003d6:	4807      	ldr	r0, [pc, #28]	; (80003f4 <main+0x11c>)
+ 80003d8:	f001 f8b6 	bl	8001548 <HAL_ADC_Stop>
 	  for(uint16_t i = 0; i < traceLenth; i++) {
- 80003da:	8afb      	ldrh	r3, [r7, #22]
- 80003dc:	3301      	adds	r3, #1
- 80003de:	82fb      	strh	r3, [r7, #22]
- 80003e0:	8afa      	ldrh	r2, [r7, #22]
- 80003e2:	8a3b      	ldrh	r3, [r7, #16]
- 80003e4:	429a      	cmp	r2, r3
- 80003e6:	d3d1      	bcc.n	800038c <main+0xb4>
+ 80003dc:	8afb      	ldrh	r3, [r7, #22]
+ 80003de:	3301      	adds	r3, #1
+ 80003e0:	82fb      	strh	r3, [r7, #22]
+ 80003e2:	8afa      	ldrh	r2, [r7, #22]
+ 80003e4:	8a3b      	ldrh	r3, [r7, #16]
+ 80003e6:	429a      	cmp	r2, r3
+ 80003e8:	d3d1      	bcc.n	800038e <main+0xb6>
 	  }
 
 	  HAL_Delay(1000);
- 80003e8:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
- 80003ec:	f000 fbee 	bl	8000bcc <HAL_Delay>
+ 80003ea:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
+ 80003ee:	f000 fbed 	bl	8000bcc <HAL_Delay>
 	  while(CDC_Transmit_FS(&dataArray, arraySize) == USBD_BUSY);
- 80003f0:	e7c0      	b.n	8000374 <main+0x9c>
- 80003f2:	bf00      	nop
+ 80003f2:	e7c0      	b.n	8000376 <main+0x9e>
  80003f4:	24000210 	.word	0x24000210
 
 080003f8 <SystemClock_Config>:

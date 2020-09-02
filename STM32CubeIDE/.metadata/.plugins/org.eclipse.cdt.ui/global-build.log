@@ -1,4 +1,4 @@
-12:42:50 **** Incremental Build of configuration Debug for project 3channelADC_h743vit6 ****
+13:41:07 **** Incremental Build of configuration Debug for project 3channelADC_h743vit6 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32H743xx -DDEBUG -c -I../USB_DEVICE/Target -I../Drivers/CMSIS/Include -I../Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../USB_DEVICE/App -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
@@ -30,11 +30,4 @@ Finished building: default.size.stdout
 Finished building: 3channelADC_h743vit6.bin
  
 Finished building: 3channelADC_h743vit6.list
- 
-12:43:14 **** Incremental Build of configuration Debug for project 3channelADC_h743vit6 ****
-make -j8 all 
-arm-none-eabi-size   3channelADC_h743vit6.elf 
-   text	   data	    bss	    dec	    hex	filename
-  41880	    492	   7780	  50152	   c3e8	3channelADC_h743vit6.elf
-Finished building: default.size.stdout
  

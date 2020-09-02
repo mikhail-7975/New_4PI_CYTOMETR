@@ -1,10 +1,36 @@
-12:43:14 **** Incremental Build of configuration Debug for project 3channelADC_h743vit6 ****
+13:41:07 **** Incremental Build of configuration Debug for project 3channelADC_h743vit6 ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32H743xx -DDEBUG -c -I../USB_DEVICE/Target -I../Drivers/CMSIS/Include -I../Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../USB_DEVICE/App -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:97:9: warning: type defaults to 'int' in declaration of 'arraySize' [-Wimplicit-int]
+   const arraySize = channelCount * traceLenth;
+         ^~~~~~~~~
+../Core/Src/main.c:112:10: warning: implicit declaration of function 'CDC_Transmit_FS' [-Wimplicit-function-declaration]
+    while(CDC_Transmit_FS(&dataArray, arraySize) == USBD_BUSY);
+          ^~~~~~~~~~~~~~~
+../Core/Src/main.c:100:11: warning: unused variable 'dataFromAdc9' [-Wunused-variable]
+   uint8_t dataFromAdc9 = 0;
+           ^~~~~~~~~~~~
+../Core/Src/main.c:99:11: warning: unused variable 'dataFromAdc8' [-Wunused-variable]
+   uint8_t dataFromAdc8 = 0;
+           ^~~~~~~~~~~~
+../Core/Src/main.c:98:11: warning: unused variable 'dataFromAdc7' [-Wunused-variable]
+   uint8_t dataFromAdc7 = 0;
+           ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "3channelADC_h743vit6.elf" @"objects.list"   -mcpu=cortex-m7 -T"F:\CytomertGetDataSystem\New_4PI_CYTOMETR\STM32CubeIDE\3channelADC_h743vit6\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3channelADC_h743vit6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3channelADC_h743vit6.elf
+ 
+arm-none-eabi-objdump -h -S  3channelADC_h743vit6.elf  > "3channelADC_h743vit6.list"
+arm-none-eabi-objcopy  -O binary  3channelADC_h743vit6.elf  "3channelADC_h743vit6.bin"
 arm-none-eabi-size   3channelADC_h743vit6.elf 
    text	   data	    bss	    dec	    hex	filename
   41880	    492	   7780	  50152	   c3e8	3channelADC_h743vit6.elf
 Finished building: default.size.stdout
  
+Finished building: 3channelADC_h743vit6.bin
+ 
+Finished building: 3channelADC_h743vit6.list
+ 
 
-12:43:14 Build Finished. 0 errors, 0 warnings. (took 470ms)
+13:41:10 Build Finished. 0 errors, 5 warnings. (took 2s.85ms)
 
