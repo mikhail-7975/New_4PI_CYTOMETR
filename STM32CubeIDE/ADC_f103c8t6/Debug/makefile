@@ -44,8 +44,8 @@ ADC_f103c8t6.bin \
 all: ADC_f103c8t6.elf secondary-outputs
 
 # Tool invocations
-ADC_f103c8t6.elf: $(OBJS) $(USER_OBJS) F:\CytomertGetDataSystem\STM32CubeIDE\ADC_f103c8t6\STM32F103C8TX_FLASH.ld
-	arm-none-eabi-gcc -o "ADC_f103c8t6.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"F:\CytomertGetDataSystem\STM32CubeIDE\ADC_f103c8t6\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC_f103c8t6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+ADC_f103c8t6.elf: $(OBJS) $(USER_OBJS) F:\CytomertGetDataSystem\New_4PI_CYTOMETR\STM32CubeIDE\ADC_f103c8t6\STM32F103C8TX_FLASH.ld
+	arm-none-eabi-gcc -o "ADC_f103c8t6.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"F:\CytomertGetDataSystem\New_4PI_CYTOMETR\STM32CubeIDE\ADC_f103c8t6\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC_f103c8t6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -1,0 +1,28 @@
+13:22:18 **** Incremental Build of configuration Debug for project testProject ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../USB_DEVICE/Target -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I../USB_DEVICE/App -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:93:11: warning: variable 'buf_to_tr' set but not used [-Wunused-but-set-variable]
+   uint8_t buf_to_tr[2000];
+           ^~~~~~~~~
+../Core/Src/main.c: In function 'CDC_ReciveCallBack':
+../Core/Src/main.c:186:2: warning: implicit declaration of function 'CDC_Transmit_FS' [-Wimplicit-function-declaration]
+  CDC_Transmit_FS(buf, len);
+  ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "testProject.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\CytomertGetDataSystem\New_4PI_CYTOMETR\STM32CubeIDE\testProject\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="testProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: testProject.elf
+ 
+arm-none-eabi-objdump -h -S  testProject.elf  > "testProject.list"
+arm-none-eabi-objcopy  -O binary  testProject.elf  "testProject.bin"
+arm-none-eabi-size   testProject.elf 
+Finished building: testProject.bin
+   text	   data	    bss	    dec	    hex	filename
+  21732	    388	   5700	  27820	   6cac	testProject.elf
+ 
+Finished building: default.size.stdout
+Finished building: testProject.list
+ 
+ 
+
+13:22:20 Build Finished. 0 errors, 2 warnings. (took 1s.978ms)
+

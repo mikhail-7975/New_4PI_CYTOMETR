@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="HAL_ADC_GetValue"/>
+		<item key="selection" value="goto error"/>
 		<list key="findhistory">
+			<item value="goto error"/>
+			<item value=" goto error"/>
+			<item value="HAL_TIMEOUT"/>
 			<item value="HAL_ADC_GetValue"/>
 			<item value="getV"/>
 			<item value="hadc"/>
@@ -20,9 +23,6 @@
 			<item value="USBD_LL_Transmit"/>
 			<item value="settx"/>
 			<item value="set"/>
-			<item value="VCP"/>
-			<item value="DMA"/>
-			<item value="i"/>
 		</list>
 		<list key="replacehistory">
 			<item value="MODE_DontReadData"/>
@@ -30,8 +30,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1478"/>
-		<item key="DIALOG_Y_ORIGIN" value="163"/>
+		<item key="DIALOG_X_ORIGIN" value="904"/>
+		<item key="DIALOG_Y_ORIGIN" value="168"/>
 		<item key="DIALOG_WIDTH" value="336"/>
 		<item key="DIALOG_HEIGHT" value="454"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

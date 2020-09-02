@@ -1,0 +1,10 @@
+09:42:07 **** Incremental Build of configuration Debug for project usb_f103c8t6_bluePill ****
+make -j8 all 
+arm-none-eabi-size   usb_f103c8t6_bluePill.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25972	    488	   5856	  32316	   7e3c	usb_f103c8t6_bluePill.elf
+Finished building: default.size.stdout
+ 
+
+09:42:07 Build Finished. 0 errors, 0 warnings. (took 469ms)
+

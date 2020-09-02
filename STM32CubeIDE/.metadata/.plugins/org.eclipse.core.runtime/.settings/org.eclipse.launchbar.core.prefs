@@ -1,9 +1,12 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:interupt_f103c8t6 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:analog_watch_dog Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:interupt_f103c8t6 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:analog_watch_dog Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:remapping_spi_f103c8t6 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:usb_f103c8t6_bluePill Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:3channelADC_h743vit6
 eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:analog_watch_dog\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:analog_watch_dog\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:interupt_f103c8t6\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:interupt_f103c8t6\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:tactGenerator\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:tactGenerator\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:usb_f103c8t6_bluePill\ Debug/activeLaunchMode=debug

@@ -20,7 +20,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "stm32f103xb.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -101,7 +101,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -246,11 +246,9 @@ void HAL_ADC_LevelOutOfWindowCallback(ADC_HandleTypeDef* hadc1)
 	//WWDG_IRQn
 	HAL_NVIC_DisableIRQ(/*IRQn*/WWDG_IRQn);
 	//HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
-	for (int i = 0; i < 20; i++)
-	{
-		HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
-		for(volatile int i = 0; i < 100000; i++);//HAL_Delay(250);
-	}
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);//. TogglePin(GPIOC, GPIO_PIN_13);
+	for(volatile int i = 0; i < 100000; i++);//HAL_Delay(250);
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);//. TogglePin(GPIOC, GPIO_PIN_13);
 	HAL_NVIC_EnableIRQ(WWDG_IRQn);
 }
 /* USER CODE END 4 */
