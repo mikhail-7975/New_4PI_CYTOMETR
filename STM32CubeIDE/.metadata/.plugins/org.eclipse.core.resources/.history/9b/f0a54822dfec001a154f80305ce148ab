@@ -93,7 +93,7 @@ int main(void)
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
   uint8_t channelCount = 3;
-  uint16_t traceLenth = 10;
+  uint16_t traceLenth = 1000;
   const arraySize = channelCount * traceLenth;
   uint8_t dataFromAdc7 = 0;
   uint8_t dataFromAdc8 = 0;

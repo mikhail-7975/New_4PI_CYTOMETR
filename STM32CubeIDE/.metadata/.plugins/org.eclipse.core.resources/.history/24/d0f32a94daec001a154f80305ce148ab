@@ -93,7 +93,7 @@ int main(void)
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
   uint8_t channelCount = 3;
-  uint16_t traceLenth = 10;
+  uint16_t traceLenth = 1000;
   const arraySize = channelCount * traceLenth;
   uint8_t dataFromAdc7 = 0;
   uint8_t dataFromAdc8 = 0;
@@ -109,16 +109,15 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  while(CDC_Transmit_FS(&dataArray, arraySize) == USBD_BUSY);
-	  for(uint16_t i = 0; i < traceLenth; i++) {
+	  /*for(uint16_t i = 0; i < traceLenth; i++) {
 		  HAL_ADC_Start(&hadc1);
 		  HAL_ADC_PollForConversion(&hadc1,100);
 		  dataArray[i] = (uint8_t) HAL_ADC_GetValue(&hadc1);//7 channel PA7
 		  dataArray[i + traceLenth] = (uint8_t) HAL_ADC_GetValue(&hadc1);//8 channel PC5
 		  dataArray[i + 2 * traceLenth] = (uint8_t) HAL_ADC_GetValue(&hadc1);//9 channel PB0
 		  HAL_ADC_Stop(&hadc1);
-	  }
-
+	  }*/
+	  CDC_Transmit_FS(&dataArray, arraySize);
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 

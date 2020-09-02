@@ -93,7 +93,7 @@ int main(void)
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
   uint8_t channelCount = 3;
-  uint16_t traceLenth = 10;
+  uint16_t traceLenth = 1000;
   const arraySize = channelCount * traceLenth;
   uint8_t dataFromAdc7 = 0;
   uint8_t dataFromAdc8 = 0;
@@ -101,7 +101,7 @@ int main(void)
 
   uint8_t dataArray[arraySize];
   for(uint16_t i = 0; i < arraySize; i++) {
-	  dataArray[i] = 10;
+	  dataArray[i] = 0;
   }
   /* USER CODE END 2 */
 
@@ -109,8 +109,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  while(CDC_Transmit_FS(&dataArray, arraySize) == USBD_BUSY);
-	  for(uint16_t i = 0; i < traceLenth; i++) {
+	  for(int i = 0; i < traceLenth; i++) {
 		  HAL_ADC_Start(&hadc1);
 		  HAL_ADC_PollForConversion(&hadc1,100);
 		  dataArray[i] = (uint8_t) HAL_ADC_GetValue(&hadc1);//7 channel PA7
@@ -118,7 +117,7 @@ int main(void)
 		  dataArray[i + 2 * traceLenth] = (uint8_t) HAL_ADC_GetValue(&hadc1);//9 channel PB0
 		  HAL_ADC_Stop(&hadc1);
 	  }
-
+	  CDC_Transmit_FS(&dataFromAdc8, arraySize);
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
@@ -225,7 +224,7 @@ static void MX_ADC1_Init(void)
   /** Common config 
   */
   hadc1.Instance = ADC1;
-  hadc1.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV1;
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV32;
   hadc1.Init.Resolution = ADC_RESOLUTION_8B;
   hadc1.Init.ScanConvMode = ADC_SCAN_ENABLE;
   hadc1.Init.EOCSelection = ADC_EOC_SEQ_CONV;
